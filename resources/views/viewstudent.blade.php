@@ -10,26 +10,30 @@
 </head>
 <body>
 
-    <h1>View Books</h1>
+    <h1>VIEW STUDENTS</h1>
 
     <table class="table">
         <thead>
           <tr>
             <th scope="col">id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
+            <th scope="col">Name</th>
+            <th scope="col">NIM</th>
+            <th scope="col">Age</th>
+            <th scope="col">Class</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-            @foreach ($books as $book)
+            @foreach ($studentz as $student)
                 <tr>
-                  <th scope="row">{{ $book->id }}</th>
-                  <td>{{ $book->title }}</td>
-                  <td>{{ $book->author }}</td>
+                  <th scope="row">{{ $student->id }}</th>
+                  <td>{{ $student->name }}</td>
+                  <td>{{ $student->NIM }}</td>
+                  <td>{{ $student->age }}</td>
+                  <td>{{ $student->class }}</td>
                   <td>
-                    <a href="{{route('getBookById', ['id'=>$book->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
-                    <form action="{{route('deleteBook', ['id' => $book->id])}}" method="post">
+                    <a href="{{route('getStudentById', ['id'=>$student->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
+                    <form action="{{route('deleteStudent', ['id' => $student->id])}}" method="post">
                       @csrf
                       @method('delete')
                       <button type="submit" class="btn btn-danger">Delete</button>

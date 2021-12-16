@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,19 @@ Route::get('/update-book/{id}', [BookController::class, 'getBookById'])->name('g
 
 Route::patch('/update-book/{id}', [BookController::class, 'updateBook'])->name('updateBook');
 
-Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name('delete');
+Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name('deleteBook');
+
+Route::get('/createstudent', [StudentController::class, 'getCreateStudent'])->name('getCreateStudent');
+
+Route::post('/createstudent', [StudentController::class, 'createStudent'])->name('createStudent');
+
+Route::get('/get-students', [StudentController::class, 'getStudents'])->name('getStudents');
+
+Route::get('/update-student/{id}', [StudentController::class, 'getStudentById'])->name('getStudentById');
+
+Route::patch('/update-student/{id}', [StudentController::class, 'updateStudent'])->name('updateStudent');
+
+Route::delete('/delete-student/{id}', [StudentController::class, 'deleteStudent'])->name('deleteStudent');
 
 Route::get('/hello', function () {
     echo ('Hello World');

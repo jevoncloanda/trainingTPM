@@ -12,7 +12,7 @@
 
     <h1>Update Form</h1>
 
-    <form action="{{route('updateBook', ['id' => $book->id])}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('updateBook', ['id' => $book->id])}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('patch')
         <div class="mb-3">
