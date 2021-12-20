@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BookRequest;
 use App\Models\Book;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
     public function getCreatePage()
     {
-        return view('create');
+        $genres = Genre::all();
+        return view('create', ['genres' => $genres]);
     }
 
     public function createBook(BookRequest $request)
@@ -20,6 +22,7 @@ class BookController extends Controller
             'author' => $request->author,
             'release' => $request->release,
             'price' => $request->price,
+            'genreId' => $request->genreId,
         ]);
 
         return redirect(route('getBooks'));

@@ -19,12 +19,13 @@ class BookSeeder extends Seeder
             'author' => 'Potter',
             'release' => '2001-01-10',
             'price' => 10000,
+            'genreId' => 1,
         ]);
         DB::table('books')->insert([
-            'title' => 'Harry2',
+            'title' => 'Ginny',
             'author' => 'Potter',
-            'release' => '2001-01-10',
             'price' => 10000,
+            'genreId' => 2,
         ]);
     }
 }

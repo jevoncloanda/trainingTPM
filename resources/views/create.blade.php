@@ -30,6 +30,10 @@
             <label for="price" class="form-label">Price</label>
             <input name="price" type="numeric" class="form-control" id="formGroupExampleInput" placeholder="Input Price">
         </div>
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre Id</label>
+            <input name="genreId" type="numeric" class="form-control" id="formGroupExampleInput" placeholder="Input Genre Id">
+        </div>
         @error('price')
             <div class="alert alert-danger">{{$message}}</div>
         @enderror
